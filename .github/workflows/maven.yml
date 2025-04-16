@@ -20,7 +20,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: ZX
+    environment: Fund_Transfer
 
     steps:
       - name: Checkout code
