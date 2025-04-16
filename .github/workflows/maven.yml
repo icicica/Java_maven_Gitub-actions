@@ -19,9 +19,8 @@ env:
   REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
 jobs:
   build:
-    runs-on: self-hosted
-    environment:
-      name: build
+    runs-on: ubuntu-latest
+    environment: ZX
 
     steps:
       - name: Checkout code
@@ -36,9 +35,8 @@ jobs:
 
 
   deploy_to_dev:
-    runs-on: self-hosted
-    environment:
-      name: dev
+    runs-on: ubuntu-latest
+    environment: ZX
     needs: build
     if: github.ref == 'refs/heads/dev' 
 
@@ -75,9 +73,8 @@ jobs:
 
 
   deploy_to_uat:
-    runs-on: self-hosted
-    environment:
-      name: uat
+    runs-on: ubuntu-latest
+    environment: ZX
     needs: build
     if: github.ref == 'refs/heads/uat' 
 
@@ -114,9 +111,8 @@ jobs:
 
 
   deploy_to_production:
-    runs-on: self-hosted
-    environment:
-      name: production
+    runs-on: ubuntu-latest
+    environment: zx
     needs: build
     if: github.ref == 'refs/heads/main' 
 
